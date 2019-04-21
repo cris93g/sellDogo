@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import axios from "axios";
 import { makeNewDog } from "../../redux/ducks/storeReducer";
 
 class AddDog extends Component {
@@ -47,23 +46,30 @@ class AddDog extends Component {
 		return (
 			<div>
 				<form>
+					<p>Dogs Name</p>
 					<input className="name" onChange={e => this.onChangeHandlerName(e)} />
+					<p>Dogs AGE</p>
 					<input className="age" onChange={e => this.onChangeHandlerAge(e)} />
+					<p>Dogs Picture</p>
 					<input
 						className="picture"
 						onChange={e => this.onChangeHandlerPicture(e)}
 					/>
+					<p>Dogs Breed</p>
 					<input
 						className="breed"
 						onChange={e => this.onChangeHandlerBreed(e)}
 					/>
+					<p>Dogs Sex</p>
 					<input className="sex" onChange={e => this.onChangeHandlerSex(e)} />
 					<button
 						onClick={() => {
 							this.addADoggo();
 						}}
 						className="submit-application"
-					/>
+					>
+						Submit
+					</button>
 				</form>
 			</div>
 		);
@@ -82,5 +88,3 @@ export default connect(
 	mapStateToProps,
 	{ makeNewDog }
 )(AddDog);
-
-// export default AddDog;
