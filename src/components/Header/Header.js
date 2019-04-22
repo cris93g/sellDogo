@@ -10,17 +10,17 @@ class Header extends React.Component {
 	}
 
 	render() {
-		console.log(this.props.user);
+		console.log(this.props.userReducer.user.username);
 		// const { REACT_APP_LOGIN, REACT_APP_LOGOUT } = process.env;
 
 		return (
 			<header className="App-header">
 				<Link to="/">Home</Link>
 
-				{this.props.user ? (
+				{this.props.userReducer.user.username ? (
 					<div>
 						<a href={process.env.REACT_APP_LOGOUT}>Logout</a>
-						<p>Welcome, {this.props.user}</p>
+						<p>Welcome, {this.props.userReducer.user.username}</p>
 					</div>
 				) : (
 					<div>

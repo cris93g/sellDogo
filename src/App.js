@@ -12,8 +12,8 @@ class App extends Component {
 			<Provider store={store}>
 				<Router>
 					<div className="App">
-						{/* <Header /> */}
-						<LogIn />
+						<Header />
+						{/* <LogIn /> */}
 						{routes}
 					</div>
 				</Router>

@@ -3,7 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Auth from "../Auth/Auth";
 const LogIn = props => {
-	console.log(props);
+	console.log(props.userReducer);
 
 	return (
 		<div>
