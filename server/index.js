@@ -5,13 +5,13 @@ const { json } = require("body-parser");
 const routes = require("./routes/routes");
 const cors = require("cors");
 const app = express();
-const port = process.env.port || 3001;
+
 const passport = require("passport");
 const session = require("express-session");
 const { getUser, strat, logout } = require(`${__dirname}/controller/authCtrl`);
 app.use(cors());
 app.use(json());
-
+const port = process.env.port || 3001;
 massive(process.env.CONNECTION_STRING).then(db => {
 	app.set("db", db);
 });
@@ -55,19 +55,15 @@ passport.serializeUser((profile, done) => {
 passport.deserializeUser((user, done) => {
 	done(null, user);
 });
-
-app.get("/me", getUser);
-app.get("/logout", logout);
-
 app.get(
 	"/login",
 	passport.authenticate("auth0", {
-		// successRedirect: "/",
-		successRedirect: "http://localhost:3000/#/",
-		// successRedirect: "/#/",
-		failureRedirect: "/login"
+		successRedirect: "http://localhost:3000/",
+		failureRedirect: "http://localhost:3000/#/"
 	})
 );
+app.get("/me", getUser);
+app.get("/logout", logout);
 
 routes(app);
 app.listen(port, () => {

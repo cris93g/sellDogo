@@ -15,7 +15,7 @@ export function logout() {
 	};
 }
 const initialState = {
-	user: [],
+	user: {},
 	isAuthed: false
 };
 
