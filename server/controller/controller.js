@@ -10,8 +10,8 @@ module.exports = {
   },
   getDogs(req, res) {
     const db = req.app.get("db");
-    console.log(req.body);
-    db.getDogs(db.owners.owner_id)
+    const { owner_id } = req.body;
+    db.getDogs([owner_id])
       .then(response => res.status(200).json(response))
       .catch(console.log);
   }
