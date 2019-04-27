@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import SideBar from "../components/SideBar/SideBar";
-class App extends Component {
+import Nav from "../../components/Nav/Nav";
+
+class Home extends Component {
 	render() {
-		return <div>Home</div>;
+		return <div>{/* <Nav /> */}</div>;
 	}
 }
 
-export default App;
+export default Home;
