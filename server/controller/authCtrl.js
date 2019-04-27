@@ -14,12 +14,12 @@ const strat = new Auth0Strategy(
 		done(null, profile);
 	}
 );
-
+//gets user function
 const getUser = (req, res) => {
 	if (req.user) res.status(200).json(req.user);
 	else res.status(403).json({ message: "Not Logged In" });
 };
-
+//logs out which clears session
 const logout = (req, res) => {
 	req.session.destroy(() => {
 		res.redirect("http://localhost:3000/#/");
@@ -27,6 +27,7 @@ const logout = (req, res) => {
 	});
 };
 
+//export function
 module.exports = {
 	strat,
 	getUser,

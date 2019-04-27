@@ -31,7 +31,17 @@ class GetDogs extends Component {
 	render() {
 		console.log(this.state.id);
 		console.log(this.state.dogs);
-		return <div>get dogs</div>;
+		const dogsDisplay = this.state.dogs.map(dog => {
+			return (
+				<div key={dog.id}>
+					<p>{dog.name}</p>
+					<p>{dog.sex}</p>
+					<p>{dog.age}</p>
+					<img src={dog.picture} />
+				</div>
+			);
+		});
+		return <div>{dogsDisplay}</div>;
 	}
 }
 const mapStateToProps = state => state;
