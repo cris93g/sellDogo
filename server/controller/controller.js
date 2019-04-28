@@ -2,8 +2,17 @@ module.exports = {
   //makes new dog in db
   newDog(req, res) {
     const db = req.app.get("db");
-    const { name, age, picture, breed, sex, owner_id } = req.body;
-    db.newDog([name, age, picture, breed, sex, owner_id, price, description])
+    const {
+      name,
+      age,
+      picture,
+      breed,
+      sex,
+      owner_id,
+      price,
+      descript
+    } = req.body;
+    db.newDog([name, age, picture, breed, sex, owner_id, price, descript])
       .then(response => {
         res.status(200).send(response);
       })

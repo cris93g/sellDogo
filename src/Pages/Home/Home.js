@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Nav from "../../components/Nav/Nav";
 // import Example from "../../components/ButtonAppBar/ButtonAppBar";
 import ButtonAppBar from "../../components/ButtonAppBar/ButtonAppBar";
+import AddDog from "../../components/AddDog/AddDog";
+import Header from "../../components/Header/Header";
 
 class Home extends Component {
   render() {
@@ -9,6 +11,8 @@ class Home extends Component {
       <div>
         {" "}
         <ButtonAppBar />
+        <Header />
+        <AddDog />
       </div>
     );
   }

@@ -5,7 +5,16 @@ const GET_DOGS = "GET_DOGS";
 const GET_ALL_DOGS = "GET_ALL_DOGS";
 
 //functions  there were pulled from backend
-export function makeNewDog(name, age, picture, breed, sex, owner_id) {
+export function makeNewDog(
+  name,
+  age,
+  picture,
+  breed,
+  sex,
+  owner_id,
+  price,
+  descript
+) {
   return {
     type: ADD_DOG,
     payload: axios.post(`/api/newDog`, {
@@ -16,7 +25,7 @@ export function makeNewDog(name, age, picture, breed, sex, owner_id) {
       sex,
       owner_id,
       price,
-      desciption
+      descript
     })
   };
 }

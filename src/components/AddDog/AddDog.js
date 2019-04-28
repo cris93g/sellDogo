@@ -15,7 +15,7 @@ class AddDog extends Component {
       breed: "",
       sex: "",
       price: 0,
-      descripion: "",
+      descript: "",
       user: {}
     };
 
@@ -43,7 +43,7 @@ class AddDog extends Component {
     this.setState({ price: e.target.value });
   }
   onChangeHandlerDescription(e) {
-    this.setState({ desciption: e.target.value });
+    this.setState({ descipt: e.target.value });
   }
 
   addADoggo() {
@@ -53,42 +53,50 @@ class AddDog extends Component {
       this.state.picture,
       this.state.breed,
       this.state.sex,
+      this.state.user.owner_id,
       this.state.price,
-      this.state.descripion,
-      this.state.user.owner_id
+      this.state.descript
     );
   }
 
   render() {
+    console.log(this.state.descipt);
     return (
       <div>
         <form>
           <p>Dogs Name</p>
           <input className="name" onChange={e => this.onChangeHandlerName(e)} />
+          <br />
           <p>Dogs AGE</p>
           <input className="age" onChange={e => this.onChangeHandlerAge(e)} />
+          <br />
           <p>Dogs Picture</p>
           <input
             className="picture"
             onChange={e => this.onChangeHandlerPicture(e)}
           />
+          <br />
           <p>Dogs Breed</p>
           <input
             className="breed"
             onChange={e => this.onChangeHandlerBreed(e)}
           />
+          <br />
           <p>Dogs Sex</p>
           <input className="sex" onChange={e => this.onChangeHandlerSex(e)} />
+          <br />
           <p>price</p>
           <input
             className="price"
             onChange={e => this.onChangeHandlerPrice(e)}
           />
+          <br />
           <p>Description</p>
           <input
             className="description"
             onChange={e => this.onChangeHandlerDescription(e)}
           />
+          <br />
           <button
             onClick={() => {
               this.addADoggo();
