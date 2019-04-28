@@ -14,6 +14,8 @@ class AddDog extends Component {
       picture: "",
       breed: "",
       sex: "",
+      price: 0,
+      descripion: "",
       user: {}
     };
 
@@ -37,6 +39,12 @@ class AddDog extends Component {
   onChangeHandlerSex(e) {
     this.setState({ sex: e.target.value });
   }
+  onChangeHandlerPrice(e) {
+    this.setState({ price: e.target.value });
+  }
+  onChangeHandlerDescription(e) {
+    this.setState({ desciption: e.target.value });
+  }
 
   addADoggo() {
     this.props.makeNewDog(
@@ -45,6 +53,8 @@ class AddDog extends Component {
       this.state.picture,
       this.state.breed,
       this.state.sex,
+      this.state.price,
+      this.state.descripion,
       this.state.user.owner_id
     );
   }
@@ -69,6 +79,16 @@ class AddDog extends Component {
           />
           <p>Dogs Sex</p>
           <input className="sex" onChange={e => this.onChangeHandlerSex(e)} />
+          <p>price</p>
+          <input
+            className="price"
+            onChange={e => this.onChangeHandlerPrice(e)}
+          />
+          <p>Description</p>
+          <input
+            className="description"
+            onChange={e => this.onChangeHandlerDescription(e)}
+          />
           <button
             onClick={() => {
               this.addADoggo();
