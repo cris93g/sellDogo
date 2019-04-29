@@ -43,7 +43,7 @@ class AddDog extends Component {
     this.setState({ price: e.target.value });
   }
   onChangeHandlerDescription(e) {
-    this.setState({ descipt: e.target.value });
+    this.setState({ descript: e.target.value });
   }
 
   addADoggo() {

@@ -1,0 +1,17 @@
+.card {
+	margin-left: 20px;
+	height: 250px;
+	width: 280px;
+	border-radius: 25px;
+	border: 0.5px solid black;
+	transition: all 0.5s ease;
+
+	.imgcard {
+		margin-top: -15px;
+		max-width: 85%;
+		border-radius: 20px;
+	}
+}
+.card:hover {
+	transform: scale(1.1);
+}
