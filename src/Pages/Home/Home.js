@@ -5,15 +5,14 @@ import Nav from "../../components/Nav/Nav";
 import AddDog from "../../components/AddDog/AddDog";
 import Header from "../../components/Header/Header";
 import Cards from "../../components/Cards/Cards";
-
+import "./Home.scss";
 class Home extends Component {
 	render() {
 		return (
 			<div>
-				{" "}
-				{/* <ButtonAppBar /> */}
+				<Nav />
+				<div className="bodybanner" />
 				<Header />
-				<AddDog />
 			</div>
 		);
 	}
