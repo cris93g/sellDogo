@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getUser } from "../../redux/ducks/userReducer";
 import axios from "axios";
+import "./GetDogs.scss";
 
 class GetDogs extends Component {
 	constructor(props) {
@@ -11,6 +12,10 @@ class GetDogs extends Component {
 			dogs: []
 		};
 	}
+
+	goToDog = id => {
+		this.props.history.push(`/dog/${id}`);
+	};
 	async componentDidMount() {
 		//destructure get user function
 		const { getUser } = this.props;
@@ -33,15 +38,20 @@ class GetDogs extends Component {
 		console.log(this.state.dogs);
 		const dogsDisplay = this.state.dogs.map(dog => {
 			return (
-				<div key={dog.id}>
-					<p>{dog.name}</p>
-					<p>{dog.sex}</p>
-					<p>{dog.age}</p>
-					<img src={dog.picture} />
+				<div
+					className="cards"
+					onClick={() => this.goToDog(dog.id)}
+					key={dog.id}
+				>
+					<div key={dog.id}>
+						<p> name: {dog.name}</p>
+						<p> age: {dog.age}</p>
+						<img src={dog.picture} className="cardP" />
+					</div>
 				</div>
 			);
 		});
-		return <div>{dogsDisplay}</div>;
+		return <div className="allC">{dogsDisplay}</div>;
 	}
 }
 const mapStateToProps = state => state;

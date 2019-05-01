@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import { getUser } from "../../redux/ducks/userReducer";
 import GetDogs from "../GetDogs/GetDogs";
-
+import "./Header.scss";
 // HEADER IS CONNECTED, WILL PULL DATA TO SHOW ON PAGE LOAD
 
 class Header extends React.Component {
